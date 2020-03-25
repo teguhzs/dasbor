@@ -1,6 +1,6 @@
 var grafikTbs = {
     chart: {
-        height: 300,
+        height: 365,
         type: 'bar',
         toolbar: {
             show: false,
@@ -11,40 +11,47 @@ var grafikTbs = {
         bar: {
             horizontal: true,
             endingShape: 'flat',
-            barHeight: '80%',
+            barHeight: '70%',
         }
     },
     dataLabels: {
         enabled: false
     },
-    colors: ['#15ff00', '#ffdb3b'],
-    series: [{
-        name: "Hari Ini",
-        data: [Math.floor(Math.random() * 5000), Math.floor(Math.random() * 5000), Math.floor(Math.random() * 5000), Math.floor(Math.random() * 5000), Math.floor(Math.random() * 5000), Math.floor(Math.random() * 5000)]
-    }, {
-        name: "Tertinggi",
-        data: [Math.floor(Math.random() * 5000), Math.floor(Math.random() * 5000), Math.floor(Math.random() * 5000), Math.floor(Math.random() * 5000), Math.floor(Math.random() * 5000), Math.floor(Math.random() * 5000)]
-    }],
-    xaxis: {
-        categories: ['Afdeling 1', 'Afdeling 2', 'Afdeling 3', 'Afdeling 4', 'Afdeling 5', 'Afdeling 6'],
+    fill: {
+        type: "solid",
+        opacity: 1
     },
+    colors: ['#00ff2f', '#fff800'],
+    series: [],
     legend: {
         position: 'top',
         horizontalAlign: 'left',
         offsetX: 40
+    },
+    grid: {
+        borderColor: '#404040',
+        strokeDashArray: 6,
+        yaxis: {
+            lines: {
+                show: false
+            }
+        },
+        xaxis: {
+            lines: {
+                show: true
+            }
+        }
     },
     dataLabels: {
         enabled: true,
         formatter: function (val) {
             return val + " Kg"
         },
-        dropShadow: {
-            enabled: false,
-            top: 1,
-            left: 1,
-            blur: 1,
-            color: '#000',
-            opacity: 0.45
+        style: {
+            fontSize: '16px',
+            fontFamily: 'Helvetica, Arial, sans-serif',
+            fontWeight: 500,
+            colors: ['#1100ff']
         }
     }
 }

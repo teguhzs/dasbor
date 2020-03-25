@@ -1,6 +1,6 @@
 <div class="widget widget-one text-left">
     <div class="widget-heading">
-        <p class="idx-label">TBS</p>
+        <p class="idx-label">Realisasi</p>
         <h1>25 TON
 
         </h1>
