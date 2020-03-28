@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="plugins/font-icons/font-awesome/css/all.css">
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
     <link rel="stylesheet" type="text/css" href="assets/css/widgets/modules-widgets.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/gradient.css">
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
     <style>
@@ -56,6 +57,12 @@
 
     .icon-hujan {
         font-size: 120px;
+    }
+
+    .widget-one {
+        height: 236px;
+        margin: 2px;
+        margin-left: 20px;
     }
     </style>
 
@@ -100,42 +107,52 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
                         <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
                     </div>
-
                     <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="row widget-statistic">
-                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12">
-                                <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/panel_luas_pemeliharaan.php";?>
                             </div>
                             <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
                                 <?php //include "widget/panel_restan.php";?>
                             </div> -->
-                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12">
-                                <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/grafik_pie_luas_pemeliharaan.php";?>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing"
+                        style="padding-left: 16px;">
+                        <?php include "widget/dasbor_pemeliharaan/grafik_bar_inspeksi_panen.php";?>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
                         <?php include "widget/dasbor_pemeliharaan/grafik_line_bahan_herbisida.php";?>
                     </div>
-
                     <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="row widget-statistic">
-                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12">
-                                <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/panel_herbisida.php";?>
                             </div>
                             <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
                                 <?php //include "widget/panel_restan.php";?>
                             </div> -->
-                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12">
-                                <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/grafik_pie_bahan_herbisida.php";?>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                        <div class="row widget-statistic" style="padding-left: 16px;">
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/grafik_kolom_btt.php";?>
+                            </div>
+                            <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                                <?php //include "widget/panel_restan.php";?>
+                            </div> -->
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/grafik_kolom_bmd.php";?>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
@@ -143,19 +160,29 @@
                     </div>
                     <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="row widget-statistic">
-                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12">
-                                <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/panel_pemupukan.php";?>
                             </div>
                             <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
                                 <?php //include "widget/panel_restan.php";?>
                             </div> -->
-                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12">
-                                <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/grafik_pie_pemupukan.php";?>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                        <div class="row widget-statistic" style="padding-left: 16px;">
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/grafik_kolom_bmtd.php";?>
+                            </div>
+                            <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                                <?php //include "widget/panel_restan.php";?>
+                            </div> -->
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/grafik_kolom_ptt.php";?>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
@@ -163,19 +190,21 @@
                     </div>
                     <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="row widget-statistic">
-                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12">
-                                <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/panel_tenaga_pemeliharaan.php";?>
                             </div>
                             <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
                                 <?php //include "widget/panel_restan.php";?>
                             </div> -->
-                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12">
-                                <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                                <?php include "widget/dasbor_pemeliharaan/grafik_pie_tenaga_pemeliharaan.php";?>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+                    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing"
+                        style="padding-left: 16px;">
+                        <?php include "widget/dasbor_pemeliharaan/grafik_line_perbandingan_inspeksi.php";?>
+
                     </div>
 
 
@@ -219,6 +248,19 @@
     <script src="widget/js/grafik_line_bahan_herbisida.js"></script>
     <script src="widget/js/grafik_line_pemupukan.js"></script>
     <script src="widget/js/grafik_line_tenaga_pemeliharaan.js"></script>
+    <script src="widget/js/grafik_line_perbandingan_inspeksi.js"></script>
+
+    <script src="widget/js/grafik_pie_luas_pemeliharaan.js"></script>
+    <script src="widget/js/grafik_pie_bahan_herbisida.js"></script>
+    <script src="widget/js/grafik_pie_pemupukan.js"></script>
+    <script src="widget/js/grafik_pie_tenaga_pemeliharaan.js"></script>
+
+    <script src="widget/js/grafik_bar_inspeksi_panen.js"></script>
+
+    <script src="widget/js/grafik_kolom_btt.js"></script>
+    <script src="widget/js/grafik_kolom_bmd.js"></script>
+    <script src="widget/js/grafik_kolom_bmtd.js"></script>
+    <script src="widget/js/grafik_kolom_ptt.js"></script>
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 

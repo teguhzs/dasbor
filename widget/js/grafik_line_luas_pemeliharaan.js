@@ -9,7 +9,7 @@ var grafikLuasPemeliharaan = {
         }
     ],
     chart: {
-        height: 150,
+        height: 160,
         type: 'line',
         dropShadow: {
             enabled: true,
@@ -23,7 +23,8 @@ var grafikLuasPemeliharaan = {
             show: false
         }
     },
-    colors: ['#0fe300', '#fff800', '#0048e3', '#e300c9', '#00d8e3', '#8800e3'],
+    colors: ['#0ac73c', '#c7170a'],
+    // colors: ['#0fe300', '#fff800', '#0048e3', '#e300c9', '#00d8e3', '#8800e3'],
     // dataLabels: {
     //     formatter: function (val) {
     //         return val + " Ton"
@@ -31,11 +32,11 @@ var grafikLuasPemeliharaan = {
     //     enabled: true,
     // },
     fill: {
-        type: "gradient"
+        type: "solid"
     },
     stroke: {
         curve: 'straight',
-        width: 2
+        width: 3
     },
     grid: {
         borderColor: '#404040',
@@ -61,7 +62,7 @@ var grafikLuasPemeliharaan = {
         position: 'top',
         horizontalAlign: 'right',
         floating: true,
-        offsetY: -25,
+        offsetY: 0,
         offsetX: -5
     }
 };

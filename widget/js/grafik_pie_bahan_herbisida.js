@@ -1,14 +1,20 @@
-var optionsAncak = {
+var optionsPieBahanHerbisida = {
+    series: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
     chart: {
         // width: 380,
-        height: 384,
+        height: 175,
         type: 'pie',
     },
-    colors: ['#00ff2f', '#fff800'],
+
+    colors: ['#0ac73c', '#c7170a'],
+    // colors: ['#0032fc', '#fc002a'],
+    // colors: ['#00ff2f', '#fff800'],
     // colors: ['#e30000', '#08e300'],
-    labels: ['Belum di Realisasi', 'Telah di Realisasi'],
+    labels: ['Realisasi', 'RKAP'],
     legend: {
-        position: 'bottom',
+        position: 'right',
+        floating: false,
+        fontSize: '10px'
     },
     responsive: [{
         breakpoint: 480,
@@ -24,15 +30,12 @@ var optionsAncak = {
     stroke: {
         show: true,
         curve: 'smooth',
-        lineCap: 'butt',
         colors: "#010836",
-        width: 5,
-        dashArray: 0,
+        width: 0,
     },
     dataLabels: {
-        enabled: false,
         style: {
-            fontSize: '50px',
+            fontSize: '25px',
             fontFamily: 'Helvetica, Arial, sans-serif',
             fontWeight: 'bold',
         },
@@ -44,16 +47,13 @@ var optionsAncak = {
             color: '#000',
             opacity: 0.45
         },
+
     },
-    series: [0, 0],
     fill: {
-        type: 'gradient',
-        opacity: 0.9
-    },
-    noData: {
-        text: 'Loading...'
+        type: 'solid',
+        opacity: 1
     }
 };
 
-var d_ancak = new ApexCharts(document.querySelector("#pieKetuntasanAncak"), optionsAncak);
-d_ancak.render();
+var d_bahanHerbisida = new ApexCharts(document.querySelector("#pieBahanHerbisida"), optionsPieBahanHerbisida);
+d_bahanHerbisida.render();

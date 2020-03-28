@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="plugins/font-icons/font-awesome/css/all.css">
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
     <link rel="stylesheet" type="text/css" href="assets/css/widgets/modules-widgets.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/gradient.css">
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
     <style>
@@ -56,6 +57,11 @@
 
     .icon-hujan {
         font-size: 120px;
+    }
+
+    .widget {
+        margin-right: 2px;
+        margin-top: 2px;
     }
     </style>
 
@@ -101,20 +107,21 @@
                     </div>
 
                     <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <div class="row widget-statistic">
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                        <div class="row widget-statistic layout-spacing" style="margin-left: 2px;margin-right: 1px;">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 layout-spacing">
                                 <?php include "widget/panel_rkap.php";?>
                             </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 layout-spacing">
                                 <?php include "widget/panel_realisasi.php";?>
                             </div>
                             <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
                                 <?php //include "widget/panel_restan.php";?>
                             </div> -->
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 layout-spacing">
                                 <?php include "widget/panel_curah_hujan.php";?>
                             </div>
-                            <div class="col-xl-12 col-lg-4 col-md-4 col-sm-4 col-12 mt-3">
+                            <div class="col-xl-12 col-lg-4 col-md-4 col-sm-4 col-12 layout-spacing"
+                                style="margin-top: 2px;">
                                 <?php include "widget/grafik_line_curah_hujan.php";?>
                             </div>
 
@@ -180,7 +187,8 @@
 
     <!-- <script src="assets/js/dashboard/dash_2.js"></script> -->
     <!-- ajax load -->
-    <script src="ajax/ajax_grafik_tbs.js"></script>
+    <script src="ajax/ajax_all.js"></script>
+    <script src="ajax/ajax_poll.js"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
 </body>

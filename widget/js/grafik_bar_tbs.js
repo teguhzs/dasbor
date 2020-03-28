@@ -1,6 +1,6 @@
 var grafikTbs = {
     chart: {
-        height: 365,
+        height: 368,
         type: 'bar',
         toolbar: {
             show: false,

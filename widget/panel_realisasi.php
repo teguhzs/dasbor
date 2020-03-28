@@ -1,4 +1,4 @@
-<div class="widget widget-one text-left">
+<div class="widget widget-one text-center">
     <div class="widget-heading">
         <p class="idx-label">Realisasi</p>
         <h1>25 TON

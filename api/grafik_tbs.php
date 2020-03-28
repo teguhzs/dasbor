@@ -1,22 +1,22 @@
 <?php 
 $result = null;
-$i=0;
+$i      = 0;
 while ($i < 7) {
-    $result[] = array(
+    $rkap[] = array(
         'x' => "Afdeling ".$i,
-        'y'  => rand(100, 1000)
+        'y' => rand(1,100)
     );
 
-    $tertinggi[] = array(
+    $realisasi[] = array(
         'x' => "Afdeling ".$i,
-        'y'  => rand(100, 1000)
+        'y' => rand(1,100)
     );
 
     $i++;
 }
 
-$data['hari_ini'] = $result;
-$data['tertinggi'] = $tertinggi;
+$data['rkap'] = $rkap;
+$data['realisasi'] = $realisasi;
 
 echo json_encode($data);
 ?>

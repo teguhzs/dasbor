@@ -1,11 +1,11 @@
-var optionsgrafikRestan = {
+var optionsKolomBmtd = {
     series: [{
         name: 'Realisasi',
         data: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
     }],
     chart: {
         type: 'bar',
-        height: 365,
+        height: 160,
         stacked: true,
         toolbar: {
             show: false
@@ -17,7 +17,8 @@ var optionsgrafikRestan = {
     stroke: {
         curve: 'straight'
     },
-    colors: ['#00ff2f', '#fff800'],
+    colors: ['#0ac73c', '#c7170a'],
+    // colors: ['#00ff2f', '#fff800'],
     // colors: ['#15ff00', '#ffdb3b'],
     responsive: [{
         breakpoint: 480,
@@ -66,11 +67,19 @@ var optionsgrafikRestan = {
         style: {
             fontSize: '20px',
             fontFamily: 'Helvetica, Arial, sans-serif',
-            fontWeight: 'bold',
-            colors: ['#1100ff']
-        }
+            fontWeight: 'bold'
+            // colors: ['#1100ff']
+        },
+        dropShadow: {
+            enabled: true,
+            top: 1,
+            left: 1,
+            blur: 1,
+            color: '#000',
+            opacity: 0.45
+        },
     },
 };
 
-var d_restan = new ApexCharts(document.querySelector("#grafikRestan"), optionsgrafikRestan);
-d_restan.render();
+var d_bmtd = new ApexCharts(document.querySelector("#kolomBmtd"), optionsKolomBmtd);
+d_bmtd.render();

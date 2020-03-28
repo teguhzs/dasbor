@@ -31,7 +31,7 @@ var optionsGrafikCurahHujanAfdeling = {
         }
     ],
     chart: {
-        height: 200,
+        height: 242,
         type: 'line',
         dropShadow: {
             enabled: true,

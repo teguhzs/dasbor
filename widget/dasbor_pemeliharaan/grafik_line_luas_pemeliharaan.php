@@ -1,9 +1,6 @@
 <div class="widget widget-chart-three">
     <div class="widget-heading">
         <h5 class="">Indikator Luas Pemeliharaan</h5>
-        <ul class="tabs tab-pills">
-            <!-- <li><a href="javascript:void(0);" id="tb_1" class="tabmenu">Pertahun</a></li> -->
-        </ul>
     </div>
 
     <div class="widget-content">

@@ -124,7 +124,9 @@ code {
 }
 
 .layout-spacing {
-    padding-bottom: 40px;
+    padding-bottom: 0px;
+    padding-right: 0;
+    padding-left: 0px;
 }
 
 .layout-px-spacing {

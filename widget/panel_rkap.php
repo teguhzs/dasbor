@@ -1,4 +1,4 @@
-<div class="widget widget-one_hybrid widget-followers text-left">
+<div class="widget widget-one text-center">
     <div class="widget-heading">
         <p class="idx-label">RKAP</p>
         <h1>31.6 TON

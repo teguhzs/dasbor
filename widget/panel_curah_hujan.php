@@ -1,7 +1,7 @@
-<div class="widget widget-one_hybrid widget-followers text-left">
+<div class="widget widget-one text-center">
     <div class="widget-heading">
-        <p class="idx-label">Rata<sup>2</sup> Curah Hujan</p>
-        <h1>10 Mili
+        <p class="idx-label">Curah Hujan</p>
+        <h1>10 MM
 
         </h1>
         <i class="far fa-arrow-alt-circle-up text-success label-berubah"> </i>
