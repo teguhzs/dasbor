@@ -1,6 +1,7 @@
 <?php 
 $result = null;
 $i      = 0;
+
 while ($i < 7) {
     $rkap[] = array(
         'x' => "Afdeling ".$i,
