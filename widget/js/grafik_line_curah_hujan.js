@@ -1,35 +1,5 @@
 var optionsGrafikCurahHujanAfdeling = {
-    series: [{
-            name: "Afdeling 1",
-            data: [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-        },
-        {
-            name: "Afdeling 2",
-            data: [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-        },
-        {
-            name: "Afdeling 3",
-            data: [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-        },
-        {
-            name: "Afdeling 4",
-            data: [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-        },
-        {
-            name: "Afdeling 5",
-            data: [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-        },
-        {
-            name: "Afdeling 6",
-            data: [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-        }
-    ],
+    series: [],
     chart: {
         height: 242,
         type: 'line',
@@ -87,9 +57,6 @@ var optionsGrafikCurahHujanAfdeling = {
         strokeOpacity: 0.5,
         fillOpacity: 0.5,
         shape: "square"
-    },
-    xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
     },
     yaxis: {
         tickAmount: 4,

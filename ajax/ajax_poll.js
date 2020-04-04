@@ -1,4 +1,3 @@
 window.setInterval(function () {
-    loadTbs();
-    loadAncak();
+    loadAll();
 }, 3000)

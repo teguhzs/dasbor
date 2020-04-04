@@ -1,13 +1,5 @@
 var grafikPerbandingan = {
-    series: [{
-            name: "Realisasi",
-            data: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        },
-        {
-            name: "RKAP",
-            data: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        }
-    ],
+    series: [],
     chart: {
         height: 350,
         type: 'line',
@@ -38,7 +30,7 @@ var grafikPerbandingan = {
         width: 2
     },
     title: {
-        text: 'Average High & Low Temperature',
+        text: ' ',
         align: 'left'
     },
     grid: {
@@ -58,13 +50,13 @@ var grafikPerbandingan = {
     markers: {
         size: 1
     },
-    xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
-    },
+    // xaxis: {
+    //     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+    // },
     legend: {
         position: 'top',
         horizontalAlign: 'right',
-        floating: true,
+        floating: false,
         offsetY: -25,
         offsetX: -5
     }
