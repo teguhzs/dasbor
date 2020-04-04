@@ -103,8 +103,8 @@
 
                 <div class="page-header">
                     <div class="page-title">
-                        <h4>Index Keseluruhan - PT. Perkebunan Nusantara VI</h4>
-                        <h6 class="font-italic">APRIL 2020</h6>
+                        <h4>Smart Global Production & Comodity Information System - PT. Perkebunan Nusantara VI</h4>
+                        <h6 class="font-italic">Indeks Produksi Global <?php echo date("d M Y"); ?></h6>
                     </div>
                 </div>
 
@@ -127,7 +127,7 @@
                     </div>
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
-                        <?php include "widget/dasbor_pemeliharaan/grafik_line_bahan_herbisida.php";?>
+                        <?php include "widget/dasbor_keseluruhan/grafik_line_capaian_rkap.php";?>
                     </div>
                     <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="row widget-statistic" style="padding-left: 40px;">
@@ -215,16 +215,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <div class="row widget-statistic" style="padding-left: 16px;">
+                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1">
+                        <div class="row widget-statistic mr-1">
                             <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
-                                <?php include "widget/dasbor_pemeliharaan/grafik_kolom_btt.php";?>
+                                <?php include "widget/dasbor_keseluruhan/grafik_donut_komoditi.php";?>
                             </div>
-                            <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
-                                <?php //include "widget/panel_restan.php";?>
-                            </div> -->
                             <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
-                                <?php include "widget/dasbor_pemeliharaan/grafik_kolom_bmd.php";?>
+                                <?php include "widget/dasbor_keseluruhan/grafik_bar_inspeksi_panen_all.php";?>
+                            </div>
+                            <div class="col-xl-12 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing mt-1">
+                                <?php include "widget/dasbor_keseluruhan/grafik_kolom_produksi_unit_usaha.php";?>
                             </div>
                         </div>
                     </div>
@@ -233,11 +233,11 @@
 
                 <div class="footer-wrapper">
                     <div class="footer-section f-section-1">
-                        <h4><?php echo date("d M Y");?>&nbsp;&nbsp;<?php //echo date("d M Y", strtotime("2020-03-15"));?>
+                        <h4><?php echo date("d M Y"); ?>&nbsp;&nbsp;<?php //echo date("d M Y", strtotime("2020-03-15"));?>
                         </h4>
                     </div>
                     <div class="footer-section f-section-2">
-                        <h4>Last Updated : <?php echo date("d M Y H:i:s");?></h4>
+                        <h4>Last Updated : <?php echo date("d M Y H:i:s"); ?></h4>
                     </div>
                 </div>
 
@@ -260,12 +260,23 @@
     $(document).ready(function() {
         App.init();
     });
+    var tanggal = new Date();
+    var tahun = tanggal.getFullYear();
     </script>
     <script src="assets/js/custom.js"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <script src="plugins/apex/apexcharts.min.js"></script>
+
+    <script src="widget/js/grafik_line_capaian_rkap.js"></script>
+
+    <script src="widget/js/grafik_bar_inspeksi_panen_all.js"></script>
+
+    <script src="widget/js/grafik_kolom_produksi_unit_usaha.js"></script>
+
+    <script src="widget/js/grafik_donut_komoditi.js"></script>
+
     <script src="widget/js/panel_gauge_oil_palm.js"></script>
     <script src="widget/js/panel_gauge_tea.js"></script>
     <script src="widget/js/panel_gauge_coffee.js"></script>

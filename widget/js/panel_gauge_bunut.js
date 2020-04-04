@@ -83,12 +83,12 @@ Highcharts.chart(
         rotation: "auto"
       },
       title: {
-        text: "BUNUT",
+        text: "BUN",
         style: {
           color: "#858585",
           fontFamily:
             '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
-          fontSize: "12px",
+          fontSize: "18px",
           fontWeight: "bold",
           fill: "#6d869f"
         },

@@ -213,11 +213,11 @@
 
                 <div class="footer-wrapper">
                     <div class="footer-section f-section-1">
-                        <h4><?php echo date("d M Y");?>&nbsp;&nbsp;<?php //echo date("d M Y", strtotime("2020-03-15"));?>
+                        <h4><?php echo date("d M Y"); ?>&nbsp;&nbsp;<?php //echo date("d M Y", strtotime("2020-03-15"));?>
                         </h4>
                     </div>
                     <div class="footer-section f-section-2">
-                        <h4>Last Updated : <?php echo date("d M Y H:i:s");?></h4>
+                        <h4>Last Updated : <?php echo date("d M Y H:i:s"); ?></h4>
                     </div>
                 </div>
 
