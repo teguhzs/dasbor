@@ -1,15 +1,19 @@
 <?php
 $result = null;
-$i = 0;
+$i = 1;
 
-while ($i < 7) {
+$tahun = date('Y');
+$bulan = date('m');
+$hariBulanIni = cal_days_in_month(CAL_GREGORIAN, $bulan, $tahun);
+
+while ($i <= $hariBulanIni) {
     $rkap[] = array(
-        'x' => "Afdeling " . $i,
+        'x' => '' . $i . '',
         'y' => rand(1, 100),
     );
 
     $realisasi[] = array(
-        'x' => "Afdeling " . $i,
+        'x' => '' . $i . '',
         'y' => rand(1, 100),
     );
 

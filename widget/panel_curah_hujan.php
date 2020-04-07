@@ -1,10 +1,11 @@
 <div class="widget widget-one text-center">
     <div class="widget-heading">
         <p class="idx-label">Curah Hujan</p>
-        <h1>10 MM
-
+        <input type="hidden" id="curah_hujan_lama" value="0">
+        <input type="hidden" id="curah_hujan_persen_lama" value="0">
+        <h1 id="curah_hujan_value">
         </h1>
-        <i class="far fa-arrow-alt-circle-up text-success label-berubah"> </i>
-        <small class="label-berubah">20%</small>
+        <i id="curah_hujan_icon" class=""> </i>
+        <small id="curah_hujan_persen" class="label-berubah"></small>
     </div>
 </div>

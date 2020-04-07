@@ -136,10 +136,10 @@
                         <?php include 'widget/grafik_kolom_tenaga_panen.php';?>
                     </div>
                     <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <?php include 'widget/grafik_line_perbandingan.php'; ?>
+                        <?php include 'widget/grafik_line_perbandingan.php';?>
                     </div>
                     <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <?php include 'widget/grafik_kolom_restan.php'; ?>
+                        <?php include 'widget/grafik_kolom_restan.php';?>
                     </div>
 
 
@@ -147,11 +147,11 @@
 
                 <div class="footer-wrapper">
                     <div class="footer-section f-section-1">
-                        <h4><?php echo date("d M Y");?>&nbsp;&nbsp;<?php //echo date("d M Y", strtotime("2020-03-15"));?>
+                        <h4><?php echo date("d M Y"); ?>&nbsp;&nbsp;<?php //echo date("d M Y", strtotime("2020-03-15"));?>
                         </h4>
                     </div>
                     <div class="footer-section f-section-2">
-                        <h4>Last Updated : <?php echo date("d M Y H:i:s");?></h4>
+                        <h4>Last Updated : <?php echo date("d M Y H:i:s"); ?></h4>
                     </div>
                 </div>
 
@@ -187,8 +187,8 @@
 
     <!-- <script src="assets/js/dashboard/dash_2.js"></script> -->
     <!-- ajax load -->
-    <script src="ajax/ajax_all.js"></script>
-    <script src="ajax/ajax_poll.js"></script>
+    <script src="ajax/ajax_all_dasbor_unit_usaha.js"></script>
+    <script src="ajax/ajax_poll_dasbor_unit_usaha.js"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
 </body>
