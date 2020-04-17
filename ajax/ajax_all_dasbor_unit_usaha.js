@@ -10,7 +10,7 @@ function loadPanelCurahHujan() {
   $.ajax({
     type: "POST",
     url: "api/panel_curah_hujan.php",
-    data: { curah_hujan_lama: curah_hujan_lama },
+    data: { curah_hujan_lama: curah_hujan_lama, id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
       curah_hujan_value = data["curah_hujan_value"];
@@ -47,7 +47,7 @@ function loadPanelRealisasi() {
   $.ajax({
     type: "POST",
     url: "api/panel_realisasi.php",
-    data: { realisasi_lama: realisasi_lama },
+    data: { realisasi_lama: realisasi_lama, id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
       realisasi_value = data["realisasi_value"];
@@ -76,7 +76,7 @@ function loadPanelRkap() {
   $.ajax({
     type: "POST",
     url: "api/panel_rkap.php",
-    data: "data",
+    data: { id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
       document.getElementById("rkap_value").innerHTML =
@@ -112,7 +112,7 @@ function loadRestan() {
   $.ajax({
     type: "POST",
     url: "api/grafik_kolom_restan.php",
-    data: "data",
+    data: { id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
       console.log(data);
@@ -131,17 +131,17 @@ function loadPerbandinganProduksi() {
   $.ajax({
     type: "POST",
     url: "api/grafik_line_perbandingan.php",
-    data: "data",
+    data: { id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
       console.log(data);
       d_perbandingan.updateSeries([
         {
-          name: "Realisasi",
+          name: "RKAP",
           data: data["rkap"],
         },
         {
-          name: "RKAP",
+          name: "REALISASI",
           data: data["realisasi"],
         },
       ]);
@@ -154,18 +154,18 @@ function loadTenagaPanen() {
   $.ajax({
     type: "POST",
     url: "api/grafik_tenaga_panen.php",
-    data: "data",
+    data: { id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
       console.log(data);
       d_tenaga_panen.updateSeries([
         {
           name: "Realisasi",
-          data: data["rkap"],
+          data: data["realisasi"],
         },
         {
           name: "RKAP",
-          data: data["realisasi"],
+          data: data["rkap"],
         },
       ]);
     },
@@ -177,17 +177,13 @@ function loadTbs() {
   $.ajax({
     type: "POST",
     url: "api/grafik_tbs.php",
-    data: "data",
+    data: { id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
       console.log(data);
       d_tbs.updateSeries([
         {
           name: "Realisasi",
-          data: data["rkap"],
-        },
-        {
-          name: "rkap",
           data: data["realisasi"],
         },
       ]);
@@ -221,3 +217,5 @@ function loadAllUnitUsaha() {
   loadTenagaPanen();
   loadPerbandinganProduksi();
 }
+
+var id_unit_usaha = document.getElementById("id_unit_usaha").value;
