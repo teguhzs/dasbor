@@ -1,3 +1,3 @@
 window.setInterval(function () {
   loadAllUnitUsaha();
-}, 3000);
+}, 30000);

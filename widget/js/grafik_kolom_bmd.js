@@ -1,17 +1,5 @@
 var optionsKolomBmd = {
-  series: [
-    {
-      name: "Realisasi",
-      data: [
-        Math.floor(Math.random() * 100),
-        Math.floor(Math.random() * 100),
-        Math.floor(Math.random() * 100),
-        Math.floor(Math.random() * 100),
-        Math.floor(Math.random() * 100),
-        Math.floor(Math.random() * 100),
-      ],
-    },
-  ],
+  series: [],
   chart: {
     type: "bar",
     height: 160,
@@ -45,16 +33,6 @@ var optionsKolomBmd = {
     bar: {
       horizontal: false,
     },
-  },
-  xaxis: {
-    categories: [
-      "Afdeling 1",
-      "Afdeling 2",
-      "Afdeling 3",
-      "Afdeling 4",
-      "Afdeling 5",
-      "Afdeling 6",
-    ],
   },
   legend: {
     position: "top",

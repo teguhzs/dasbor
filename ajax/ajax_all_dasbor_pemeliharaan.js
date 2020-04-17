@@ -1,3 +1,79 @@
+// ajax grafik PTT per afdeling
+function loadPTT() {
+  $.ajax({
+    type: "POST",
+    url: "api/grafik_kolom_ptt.php",
+    data: { id_unit_usaha: id_unit_usaha },
+    dataType: "JSON",
+    success: function (data) {
+      console.log(data);
+      d_ptt.updateSeries([
+        {
+          name: "PTT",
+          data: data["ptt"],
+        },
+      ]);
+    },
+  });
+}
+
+// ajax grafik BMTD per afdeling
+function loadBMTD() {
+  $.ajax({
+    type: "POST",
+    url: "api/grafik_kolom_bmtd.php",
+    data: { id_unit_usaha: id_unit_usaha },
+    dataType: "JSON",
+    success: function (data) {
+      console.log(data);
+      d_bmtd.updateSeries([
+        {
+          name: "BMTD",
+          data: data["bmtd"],
+        },
+      ]);
+    },
+  });
+}
+
+// ajax grafik BMD per afdeling
+function loadBMD() {
+  $.ajax({
+    type: "POST",
+    url: "api/grafik_kolom_bmd.php",
+    data: { id_unit_usaha: id_unit_usaha },
+    dataType: "JSON",
+    success: function (data) {
+      console.log(data);
+      d_bmd.updateSeries([
+        {
+          name: "BMD",
+          data: data["bmd"],
+        },
+      ]);
+    },
+  });
+}
+
+// ajax grafik BTT per afdeling
+function loadBTT() {
+  $.ajax({
+    type: "POST",
+    url: "api/grafik_kolom_btt.php",
+    data: { id_unit_usaha: id_unit_usaha },
+    dataType: "JSON",
+    success: function (data) {
+      console.log(data);
+      d_btt.updateSeries([
+        {
+          name: "BTT",
+          data: data["btt"],
+        },
+      ]);
+    },
+  });
+}
+
 // ajax grafik penggunaan bahan herbisida
 function loadLineTenagaPemeliharaan() {
   $.ajax({
@@ -151,7 +227,7 @@ function loadBarInspeksiPanen() {
   $.ajax({
     type: "POST",
     url: "api/grafik_bar_inspeksi_panen.php",
-    data: "data",
+    data: { id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
       console.log(data);
@@ -167,6 +243,10 @@ function loadBarInspeksiPanen() {
 
 // Ajax all load
 function loadAllPemeliharaan() {
+  loadPTT();
+  loadBMTD();
+  loadBMD();
+  loadBTT();
   loadBarInspeksiPanen();
   loadPiePemupukan();
   loadPieTenagaPemeliharaan();
@@ -178,3 +258,5 @@ function loadAllPemeliharaan() {
   loadLineBahanHerbisida();
   //   console.log("Loaded");
 }
+
+var id_unit_usaha = document.getElementById("id_unit_usaha").value;

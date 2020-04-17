@@ -163,7 +163,7 @@ if (!isset($_GET['u'])) {
             </h4>
           </div>
           <div class="footer-section f-section-2">
-            <h4>Last Updated : <?php echo date("d M Y H:i:s"); ?></h4>
+            <h4 id="last-update">Last Updated : <?php echo date("d M Y H:i:s"); ?></h4>
           </div>
         </div>
 

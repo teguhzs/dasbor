@@ -16,7 +16,10 @@ if (mysql_num_rows($query1) > 0) {
         $query1_1 = mysql_query("SELECT SUM(drp.kebutuhan_armada) as rkap
                                     FROM data_rencana_panen drp
                                     LEFT JOIN data_pegawai dp ON dp.id_pegawai = drp.id_pegawai
-                                    WHERE dp.id_afdeling = '$row1[id_afdeling]'");
+                                    WHERE dp.id_afdeling = '$row1[id_afdeling]'
+                                    AND date(drp.waktu) >= '$tanggal_mulai'
+                                    AND date(drp.waktu) <= '$tanggal_akhir'
+                                ");
         if (mysql_num_rows($query1_1) > 0) {
             while ($row1_1 = mysql_fetch_array($query1_1)) {
                 $rkap[] = array(

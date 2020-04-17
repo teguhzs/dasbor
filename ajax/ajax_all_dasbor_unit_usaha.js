@@ -205,8 +205,29 @@ function loadAncak() {
   });
 }
 
+function updateDasbor1() {
+  var lastUpdate = document.getElementById("last-update");
+  var currentdate = new Date();
+  var datetime =
+    "Last Updated: " +
+    currentdate.getDate() +
+    "/" +
+    (currentdate.getMonth() + 1) +
+    "/" +
+    currentdate.getFullYear() +
+    " @ " +
+    currentdate.getHours() +
+    ":" +
+    currentdate.getMinutes() +
+    ":" +
+    currentdate.getSeconds();
+
+  lastUpdate.innerText = datetime;
+}
+
 // Ajax all load
 function loadAllUnitUsaha() {
+  updateDasbor1();
   loadPanelCurahHujan();
   loadPanelRealisasi();
   loadPanelRkap();
