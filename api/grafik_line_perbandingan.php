@@ -23,11 +23,10 @@ while ($i < 13) {
         'x' => date('M', strtotime($tanggal)),
         'y' => round($y),
     );
-    $query2 = mysql_query("SELECT IFNULL(SUM(drp.tdn * drp.rbt), 0) as rkap
-                            FROM data_rencana_panen drp
-                            LEFT JOIN data_pegawai dp ON dp.id_pegawai = drp.id_pegawai
-                            WHERE dp.id_unit_usaha = '$id_unit_usaha'
-                            AND DATE_FORMAT(drp.waktu, '%c%Y') = '$bulan'");
+    $query2 = mysql_query("SELECT IFNULL(rkap, 0) as rkap
+                            FROM data_rkap
+                            WHERE id_unit_usaha = '$id_unit_usaha'
+                            AND DATE_FORMAT(waktu, '%c%Y') = '$bulan'");
     $row2 = mysql_fetch_array($query2);
     $y2 = $row2['rkap'] / 1000;
     $rkap[] = array(

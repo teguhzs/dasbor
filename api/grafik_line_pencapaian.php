@@ -6,10 +6,9 @@ $tahun = date('Y');
 for ($i = $tahun - 8; $i <= $tahun; $i++) {
     # code...
 
-    $query1 = mysql_query("SELECT IFNULL(SUM(drp.tdn * drp.rbt), 0) as rkap
-    FROM data_rencana_panen drp
-    LEFT JOIN data_pegawai dp ON dp.id_pegawai = drp.id_pegawai
-    WHERE DATE_FORMAT(drp.waktu, '%Y') = '$i'");
+    $query1 = mysql_query("SELECT IFNULL(SUM(rkap), 0) as rkap
+    FROM data_rkap
+    WHERE DATE_FORMAT(waktu, '%Y') = '$i'");
     $row1 = mysql_fetch_array($query1);
     $y1 = $row1['rkap'] / 1000;
     $rkap[] = array(

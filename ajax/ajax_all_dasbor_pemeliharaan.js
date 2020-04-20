@@ -356,7 +356,7 @@ function loadLineTenagaPemeliharaan() {
           data: data["realisasi"],
         },
         {
-          name: "RKAP",
+          name: "Rencana",
           data: data["rkap"],
         },
       ]);
@@ -379,7 +379,7 @@ function loadLinePemupukan() {
           data: data["realisasi"],
         },
         {
-          name: "RKAP",
+          name: "Rencana",
           data: data["rkap"],
         },
       ]);
@@ -402,7 +402,7 @@ function loadLineBahanHerbisida() {
           data: data["realisasi"],
         },
         {
-          name: "RKAP",
+          name: "Rencana",
           data: data["rkap"],
         },
       ]);
@@ -425,7 +425,7 @@ function loadLuasPemeliharaan() {
           data: data["realisasi"],
         },
         {
-          name: "RKAP",
+          name: "Rencana",
           data: data["rkap"],
         },
       ]);
@@ -469,7 +469,6 @@ function loadPiePemupukan() {
     data: { id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
-      // console.log(data);
       d_piePemupukan.updateSeries(data);
     },
   });
@@ -483,7 +482,6 @@ function loadPieTenagaPemeliharaan() {
     data: { id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
-      // console.log(data);
       d_pieTenagaPemeliharaan.updateSeries(data);
     },
   });

@@ -163,10 +163,6 @@ function loadTenagaPanen() {
           name: "Realisasi",
           data: data["realisasi"],
         },
-        {
-          name: "RKAP",
-          data: data["rkap"],
-        },
       ]);
     },
   });
@@ -196,7 +192,7 @@ function loadAncak() {
   $.ajax({
     type: "POST",
     url: "api/grafik_pie_ketuntasan_ancak.php",
-    data: "data",
+    data: { id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
       // console.log(data);

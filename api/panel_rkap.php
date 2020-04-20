@@ -5,17 +5,14 @@ if (!isset($_POST['id_unit_usaha'])) {
     echo "Maaf.. Halaman tidak ditemukan";
     die();
 }
-$tanggal_mulai = date('Y-m-01');
-$tanggal_akhir = date('Y-m-t');
+$bulan = date("mY");
 $id_unit_usaha = $_POST['id_unit_usaha'];
 // $id_unit_usaha = 'UNI1912006';
 
-$query1 = mysql_query("SELECT IFNULL(SUM(drp.tdn * drp.rbt), 0) as rkap
-                        FROM data_rencana_panen drp
-                        LEFT JOIN data_pegawai dp ON dp.id_pegawai = drp.id_pegawai
-                        WHERE drp.id_unit_usaha = '$id_unit_usaha'
-                        AND date(drp.waktu) >= '$tanggal_mulai'
-                        AND date(drp.waktu) <= '$tanggal_akhir'");
+$query1 = mysql_query("SELECT IFNULL(rkap, 0) as rkap
+                        FROM data_rkap
+                        WHERE id_unit_usaha = '$id_unit_usaha'
+                        AND DATE_FORMAT(waktu, '%c%Y') = '$bulan'");
 
 $cek1 = mysql_num_rows($query1);
 
