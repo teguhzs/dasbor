@@ -90,14 +90,14 @@ function loadCurahHujan() {
   $.ajax({
     type: "POST",
     url: "api/grafik_line_curah_hujan.php",
-    data: "data",
+    data: { id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
       var series = [];
       for (let i = 0; i < data["curah_hujan"].length; i++) {
         var seriesData = {
-          name: "Afdeling " + i,
-          data: data["curah_hujan"][i][i + 1],
+          name: data["curah_hujan"][i][i]["nama_afdeling"],
+          data: data["curah_hujan"][i][i]["data"],
         };
         series.push(seriesData);
       }

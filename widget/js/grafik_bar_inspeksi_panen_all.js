@@ -1,48 +1,31 @@
 var grafikInspeksiPanenAll = {
-  series: [
-    {
-      name: "BTT",
-      data: [44, 55, 41, 37, 22, 43, 21]
-    },
-    {
-      name: "BMD",
-      data: [53, 32, 33, 52, 13, 43, 32]
-    },
-    {
-      name: "BMTD",
-      data: [12, 17, 11, 9, 15, 11, 20]
-    },
-    {
-      name: "PTT",
-      data: [9, 7, 5, 8, 6, 9, 4]
-    }
-  ],
+  series: [],
   chart: {
     type: "bar",
     height: 285,
     stacked: true,
     toolbar: {
-      show: false
-    }
+      show: false,
+    },
   },
   grid: {
     borderColor: "#404040",
     strokeDashArray: 6,
     yaxis: {
       lines: {
-        show: true
-      }
+        show: true,
+      },
     },
     xaxis: {
       lines: {
-        show: false
-      }
-    }
+        show: false,
+      },
+    },
   },
   plotOptions: {
     bar: {
-      horizontal: true
-    }
+      horizontal: true,
+    },
   },
   title: {
     text: "Indeks Inspeksi Panen per Tahun",
@@ -52,41 +35,40 @@ var grafikInspeksiPanenAll = {
     style: {
       color: "#fff",
       fontWeight: "bold",
-      fontSize: "14px"
-    }
+      fontSize: "14px",
+    },
   },
   stroke: {
     width: 1,
-    colors: ["#fff"]
+    colors: ["#fff"],
   },
   xaxis: {
-    categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
     labels: {
-      formatter: function(val) {
-        return val + "K";
-      }
-    }
+      formatter: function (val) {
+        return val + "";
+      },
+    },
   },
   yaxis: {
     title: {
-      text: undefined
-    }
+      text: undefined,
+    },
   },
   tooltip: {
     y: {
-      formatter: function(val) {
-        return val + "K";
-      }
-    }
+      formatter: function (val) {
+        return val + "";
+      },
+    },
   },
   fill: {
-    opacity: 1
+    opacity: 1,
   },
   legend: {
     position: "bottom",
     horizontalAlign: "left",
-    offsetX: 40
-  }
+    offsetX: 40,
+  },
 };
 var d_grafik_inspeksi_panen_all = new ApexCharts(
   document.querySelector("#grafikInspeksiPanenAll"),

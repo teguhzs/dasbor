@@ -1,24 +1,26 @@
 .danger-gradient {
-    background: #c7170a !important;
-    /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C) !important; */
-    /* Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to right, #FF4B2B, #FF416C) !important; */
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #c7170a !important;
+  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C) !important; */
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #FF4B2B, #FF416C) !important; */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
+.warning-gradient {
+  background: #ff9317 !important;
+  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C) !important; */
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #FF4B2B, #FF416C) !important; */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .success-gradient {
-    background: #0ac73c !important;
-    /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to right, #a8e063, #56ab2f) !important; */
-    /* Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to right, #a8e063, #56ab2f) !important; */
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
-
-
-
+  background: #0ac73c !important;
+  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #a8e063, #56ab2f) !important; */
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #a8e063, #56ab2f) !important; */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

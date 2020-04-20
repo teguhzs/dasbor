@@ -297,6 +297,8 @@
     <script src="widget/js/panel_gauge_aln.js"></script>
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="ajax/ajax_all_dasbor_utama.js"></script>
+  <script src="ajax/ajax_poll_dasbor_utama.js"></script>
 
 </body>
 

@@ -2,9 +2,12 @@
 include "../../admin/include/koneksi/koneksi.php";
 
 $tahun = date('Y');
-$j = 1;
-
-$id_unit_usaha = 'UNI1912006';
+$j = 0;
+if (!isset($_POST['id_unit_usaha'])) {
+    echo "Halaman tidak ditemukan!!";
+    die();
+}
+$id_unit_usaha = $_POST['id_unit_usaha'];
 
 $query1 = mysql_query("SELECT * FROM data_afdeling WHERE id_unit_usaha = '$id_unit_usaha' ORDER BY nama_afdeling ASC");
 $cekafdeling = mysql_num_rows($query1);
@@ -31,7 +34,10 @@ if ($cekafdeling > 0) {
 
             $i++;
         }
-        $afdeling[][$j] = $curah_hujan[$j];
+        $afdeling[][$j] = array(
+            "nama_afdeling" => $row1['nama_afdeling'],
+            'data' => $curah_hujan[$j],
+        );
 
         $j++;
     }

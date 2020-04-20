@@ -1,32 +1,11 @@
 var grafikProduksiUnitUsaha = {
-  series: [
-    {
-      name: "Inflation",
-      data: [
-        2.3,
-        3.1,
-        4.0,
-        10.1,
-        8.0,
-        7.6,
-        6.2,
-        5.3,
-        4.4,
-        3.8,
-        2.5,
-        1.2,
-        0.8,
-        0.7,
-        0.9
-      ]
-    }
-  ],
+  series: [],
   chart: {
     height: 260,
     type: "bar",
     toolbar: {
-      show: false
-    }
+      show: false,
+    },
   },
   plotOptions: {
     bar: {
@@ -34,60 +13,43 @@ var grafikProduksiUnitUsaha = {
       columnWidth: "30%",
       dataLabels: {
         position: "top", // top, center, bottom
-        horizontal: true
-      }
-    }
+        horizontal: true,
+      },
+    },
   },
   dataLabels: {
     enabled: true,
-    formatter: function(val) {
+    formatter: function (val) {
       return val + "%";
     },
     offsetY: -10,
     style: {
       fontSize: "14px",
       colors: ["#FFF"],
-      fontWeight: "bold"
-    }
+      fontWeight: "bold",
+    },
   },
   grid: {
     borderColor: "#404040",
     strokeDashArray: 6,
     yaxis: {
       lines: {
-        show: true
-      }
+        show: true,
+      },
     },
     xaxis: {
       lines: {
-        show: false
-      }
-    }
+        show: false,
+      },
+    },
   },
   xaxis: {
-    categories: [
-      "RSA",
-      "OPH",
-      "DRL",
-      "RDU",
-      "BUN",
-      "SSL",
-      "BHR",
-      "PLK",
-      "BKC",
-      "TLB",
-      "DAR",
-      "ARO",
-      "BK",
-      "MAI",
-      "ALN"
-    ],
     position: "bottom",
     axisBorder: {
-      show: false
+      show: false,
     },
     axisTicks: {
-      show: false
+      show: false,
     },
     crosshairs: {
       fill: {
@@ -97,27 +59,27 @@ var grafikProduksiUnitUsaha = {
           colorTo: "#BED1E6",
           stops: [0, 100],
           opacityFrom: 0.4,
-          opacityTo: 0.5
-        }
-      }
+          opacityTo: 0.5,
+        },
+      },
     },
     tooltip: {
-      enabled: true
-    }
+      enabled: true,
+    },
   },
   yaxis: {
     axisBorder: {
-      show: false
+      show: false,
     },
     axisTicks: {
-      show: false
+      show: false,
     },
     labels: {
       show: false,
-      formatter: function(val) {
+      formatter: function (val) {
         return val + "%";
-      }
-    }
+      },
+    },
   },
   title: {
     text: "Indikator Produksi Unit Usaha Tahun " + tahun,
@@ -125,9 +87,9 @@ var grafikProduksiUnitUsaha = {
     offsetY: 0,
     align: "center",
     style: {
-      color: "#FFF"
-    }
-  }
+      color: "#FFF",
+    },
+  },
 };
 
 var d_produksi_unit_usaha = new ApexCharts(
