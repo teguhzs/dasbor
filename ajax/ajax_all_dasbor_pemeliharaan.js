@@ -528,9 +528,9 @@ function updateDasbor() {
 
 // Ajax all load
 function loadAllPemeliharaan() {
-  updateDasbor();
+  // updateDasbor();
   loadPanelBahanPupuk();
-  loadPanelTenagaPemeliharaan();
+  // loadPanelTenagaPemeliharaan();
   loadPanelBahanHerbisida();
   loadPanelLuas();
   loadPerbandinganInspeksi();

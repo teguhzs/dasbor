@@ -115,11 +115,11 @@ if (!isset($_GET['u'])) {
         </div>
 
         <div class="row layout-top-spacing">
-          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+          <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
             <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
           </div>
 
-          <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+          <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <div class="row widget-statistic layout-spacing" style="margin-left: 2px;margin-right: 1px;">
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 layout-spacing">
                 <?php include "widget/panel_rkap.php";?>
@@ -144,17 +144,96 @@ if (!isset($_GET['u'])) {
           </div>
 
 
-          <div class="col-xl-3 col-lg-6 col-md-12 col-sm-12 col-12 layout-spacing">
+          <div class="col-xl-2 col-lg-6 col-md-12 col-sm-12 col-12 layout-spacing">
             <?php include 'widget/grafik_kolom_tenaga_panen.php';?>
           </div>
-          <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+          <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <?php include 'widget/grafik_line_perbandingan.php';?>
           </div>
           <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <?php include 'widget/grafik_kolom_restan.php';?>
           </div>
+        </div>
 
+        <div class="row top-spacing">
+          <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/dasbor_pemeliharaan/panel_luas_pemeliharaan.php";?>
+          </div>
+          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+                <?php include "widget/dasbor_pemeliharaan/grafik_line_luas_pemeliharaan.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/dasbor_pemeliharaan/grafik_pie_luas_pemeliharaan.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+        </div>
 
+        <div class="row top-spacing">
+          <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/dasbor_pemeliharaan/panel_herbisida.php";?>
+          </div>
+          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/dasbor_pemeliharaan/grafik_line_bahan_herbisida.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+        </div>
+
+        <div class="row top-spacing">
+          <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/dasbor_pemeliharaan/panel_pemupukan.php";?>
+          </div>
+          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/dasbor_pemeliharaan/grafik_line_tenaga_pemeliharaan.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
+          <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+            <?php include "widget/grafik_pie_ketuntasan_ancak.php";?>
+          </div>
         </div>
 
         <div class="footer-wrapper">
@@ -188,7 +267,7 @@ if (!isset($_GET['u'])) {
   <script src="assets/js/custom.js"></script>
   <!-- END GLOBAL MANDATORY SCRIPTS -->
 
-  <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+  <!-- PRODUKSI -->
   <script src="plugins/apex/apexcharts.min.js"></script>
   <script src="widget/js/grafik_bar_tbs.js"></script>
   <script src="widget/js/grafik_line_perbandingan.js"></script>
@@ -197,8 +276,18 @@ if (!isset($_GET['u'])) {
   <script src="widget/js/grafik_line_curah_hujan.js"></script>
   <script src="widget/js/grafik_kolom_restan.js"></script>
 
+  <!-- PEMELIHARAAN -->
+
+  <script src="widget/js/grafik_line_luas_pemeliharaan.js"></script>
+  <script src="widget/js/grafik_line_bahan_herbisida.js"></script>
+  <script src="widget/js/grafik_line_tenaga_pemeliharaan.js"></script>
+
+  <script src="widget/js/grafik_pie_luas_pemeliharaan.js"></script>
+
+
   <!-- <script src="assets/js/dashboard/dash_2.js"></script> -->
   <!-- ajax load -->
+  <script src="ajax/ajax_all_dasbor_pemeliharaan.js"></script>
   <script src="ajax/ajax_all_dasbor_unit_usaha.js"></script>
   <script src="ajax/ajax_poll_dasbor_unit_usaha.js"></script>
   <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->

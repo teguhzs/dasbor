@@ -1,7 +1,7 @@
 var grafikTenagaPemeliharaan = {
   series: [],
   chart: {
-    height: 220,
+    height: 350,
     type: "line",
     dropShadow: {
       enabled: true,
@@ -42,12 +42,31 @@ var grafikTenagaPemeliharaan = {
     text: "Jumlah Tenaga Pemeliharaan per Hari",
     floating: false,
     style: {
+      fontSize: '20px',
       color: "#fff",
     },
     align: "left",
   },
   yaxis: {
-    tickAmount: 3,
+    tickAmount: 5,
+    labels: {
+      show: true,
+      align: 'right',
+      style: {
+        fontSize: '20px',
+        fontFamily: 'Helvetica, Arial, sans-serif',
+      },
+    },
+  },
+  xaxis: {
+    labels: {
+      show: true,
+      align: 'right',
+      style: {
+        fontSize: '20px',
+        fontFamily: 'Helvetica, Arial, sans-serif',
+      },
+    },
   },
   grid: {
     borderColor: "#404040",

@@ -20,7 +20,18 @@ var optionsGrafikCurahHujanAfdeling = {
         enabled: false,
     },
     fill: {
-        type: "gradient"
+        type: "gradient",
+        // opacity: 1,
+        gradient: {
+            shade: 'dark',
+            type: 'vertical',
+            shadeIntensity: 0.5,
+            inverseColors: false,
+            opacityFrom: 1,
+            opacityTo: 0.8,
+            stops: [0, 100]
+        }
+
     },
     stroke: {
         curve: 'smooth',
@@ -46,7 +57,7 @@ var optionsGrafikCurahHujanAfdeling = {
         margin: 10,
         floating: true,
         style: {
-            fontSize: '14px',
+            fontSize: '20px',
             fontWeight: 'bold',
             fontFamily: undefined,
             color: '#fff'
@@ -60,10 +71,28 @@ var optionsGrafikCurahHujanAfdeling = {
     },
     yaxis: {
         tickAmount: 4,
+        labels: {
+            show: true,
+            align: 'right',
+            style: {
+                fontSize: '20px',
+                fontFamily: 'Helvetica, Arial, sans-serif',
+            },
+        },
+    },
+    xaxis: {
+        labels: {
+            show: true,
+            align: 'right',
+            style: {
+                fontSize: '20px',
+                fontFamily: 'Helvetica, Arial, sans-serif',
+            },
+        },
     },
     legend: {
         position: 'top',
-        fontSize: '13px',
+        fontSize: '20px',
         horizontalAlign: 'right',
         floating: false,
         offsetY: 0,

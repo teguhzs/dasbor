@@ -1,7 +1,7 @@
 var grafikLuasPemeliharaan = {
   series: [],
   chart: {
-    height: 220,
+    height: 350,
     type: "line",
     dropShadow: {
       enabled: true,
@@ -25,7 +25,7 @@ var grafikLuasPemeliharaan = {
     distributed: false,
     textAnchor: "middle",
     style: {
-      fontSize: "10px",
+      fontSize: "11px",
       fontFamily: "Helvetica, Arial, sans-serif",
       fontWeight: "bold",
       // colors: undefined,
@@ -33,6 +33,17 @@ var grafikLuasPemeliharaan = {
   },
   fill: {
     type: "gradient",
+    // opacity: 1,
+    gradient: {
+      shade: 'dark',
+      type: 'vertical',
+      shadeIntensity: 0.5,
+      inverseColors: false,
+      opacityFrom: 1,
+      opacityTo: 0.8,
+      stops: [0, 100]
+    }
+
   },
   stroke: {
     curve: "straight",
@@ -42,12 +53,31 @@ var grafikLuasPemeliharaan = {
     text: "Capaian Luas Pemeliharaan per Hari",
     floating: false,
     style: {
+      fontSize: '20px',
       color: "#fff",
     },
     align: "left",
   },
   yaxis: {
-    tickAmount: 3,
+    tickAmount: 5,
+    labels: {
+      show: true,
+      align: 'right',
+      style: {
+        fontSize: '20px',
+        fontFamily: 'Helvetica, Arial, sans-serif',
+      },
+    },
+  },
+  xaxis: {
+    labels: {
+      show: true,
+      align: 'right',
+      style: {
+        fontSize: '20px',
+        fontFamily: 'Helvetica, Arial, sans-serif',
+      },
+    },
   },
   grid: {
     borderColor: "#404040",

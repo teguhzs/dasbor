@@ -2,7 +2,7 @@ var optionsPieLuasPemeliharaan = {
   series: [],
   chart: {
     // width: 380,
-    height: 235,
+    height: 365,
     type: "pie",
   },
 
@@ -12,10 +12,10 @@ var optionsPieLuasPemeliharaan = {
   // colors: ['#e30000', '#08e300'],
   labels: ["Realisasi", "RKAP"],
   title: {
-    text: "Persentase Realisasi terhadap RKAP",
+    text: "Persentase Babat Gawang",
     floating: false,
     style: {
-      fontSize: "10px",
+      fontSize: "15px",
       color: "#fff",
     },
     align: "center",
@@ -23,7 +23,7 @@ var optionsPieLuasPemeliharaan = {
   legend: {
     position: "bottom",
     floating: false,
-    fontSize: "10px",
+    fontSize: "15px",
     offsetY: -8,
   },
   responsive: [

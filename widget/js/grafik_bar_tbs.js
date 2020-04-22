@@ -1,64 +1,94 @@
 var grafikTbs = {
-    chart: {
-        height: 368,
-        type: 'bar',
-        toolbar: {
-            show: false,
-        },
-        stacked: true
+  chart: {
+    height: 368,
+    type: "bar",
+    toolbar: {
+      show: false,
     },
-    plotOptions: {
-        bar: {
-            horizontal: true,
-            endingShape: 'flat',
-            barHeight: '70%',
-        }
+    stacked: true,
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      endingShape: "flat",
+      barHeight: "70%",
     },
-    dataLabels: {
-        enabled: false
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  fill: {
+    type: "gradient",
+    // opacity: 1,
+    gradient: {
+      shade: "dark",
+      type: "vertical",
+      shadeIntensity: 0.5,
+      inverseColors: false,
+      opacityFrom: 1,
+      opacityTo: 0.8,
+      stops: [0, 100],
     },
-    fill: {
-        type: "solid",
-        opacity: 1
+  },
+  colors: ["#00ff2f", "#fff800"],
+  series: [],
+  legend: {
+    position: "top",
+    horizontalAlign: "left",
+    offsetX: 40,
+  },
+  grid: {
+    borderColor: "#404040",
+    strokeDashArray: 6,
+    yaxis: {
+      lines: {
+        show: false,
+      },
     },
-    colors: ['#00ff2f', '#fff800'],
-    series: [],
-    legend: {
-        position: 'top',
-        horizontalAlign: 'left',
-        offsetX: 40
+    xaxis: {
+      lines: {
+        show: true,
+      },
     },
-    grid: {
-        borderColor: '#404040',
-        strokeDashArray: 6,
-        yaxis: {
-            lines: {
-                show: false
-            }
-        },
-        xaxis: {
-            lines: {
-                show: true
-            }
-        }
+  },
+  yaxis: {
+    tickAmount: 5,
+    labels: {
+      show: true,
+      align: "right",
+      style: {
+        fontSize: "20px",
+        fontFamily: "Helvetica, Arial, sans-serif",
+      },
     },
-    dataLabels: {
-        enabled: true,
-        formatter: function (val) {
-            return val + " Kg"
-        },
-        style: {
-            fontSize: '16px',
-            fontFamily: 'Helvetica, Arial, sans-serif',
-            fontWeight: 500,
-            colors: ['#1100ff']
-        }
-    }
-}
+  },
+  xaxis: {
+    labels: {
+      show: true,
+      align: "right",
+      style: {
+        fontSize: "20px",
+        fontFamily: "Helvetica, Arial, sans-serif",
+      },
+    },
+  },
+  dataLabels: {
+    enabled: true,
+    formatter: function (val) {
+      return val + " Kg";
+    },
+    style: {
+      fontSize: "16px",
+      fontFamily: "Helvetica, Arial, sans-serif",
+      fontWeight: 500,
+      colors: ["#1100ff"],
+    },
+  },
+};
 
 var d_tbs = new ApexCharts(
-    document.querySelector("#tandanBuahSegar"),
-    grafikTbs
+  document.querySelector("#tandanBuahSegar"),
+  grafikTbs
 );
 
 d_tbs.render();

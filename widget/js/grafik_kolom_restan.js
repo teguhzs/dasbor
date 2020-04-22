@@ -40,8 +40,38 @@ var optionsgrafikRestan = {
     position: "top",
   },
   fill: {
-    type: "solid",
-    opacity: 1,
+    type: "gradient",
+    // opacity: 1,
+    gradient: {
+      shade: "dark",
+      type: "vertical",
+      shadeIntensity: 0.5,
+      inverseColors: false,
+      opacityFrom: 1,
+      opacityTo: 0.8,
+      stops: [0, 100],
+    },
+  },
+  yaxis: {
+    tickAmount: 5,
+    labels: {
+      show: true,
+      align: "right",
+      style: {
+        fontSize: "20px",
+        fontFamily: "Helvetica, Arial, sans-serif",
+      },
+    },
+  },
+  xaxis: {
+    labels: {
+      show: true,
+      align: "right",
+      style: {
+        fontSize: "20px",
+        fontFamily: "Helvetica, Arial, sans-serif",
+      },
+    },
   },
   grid: {
     borderColor: "#404040",
