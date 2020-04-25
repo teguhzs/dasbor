@@ -1,52 +1,54 @@
 <?php
 include "../../admin/include/koneksi/koneksi.php";
 
-if (!isset($_POST['id_unit_usaha'])) {
-    echo "Halaman tidak ditemukan!!";
-    die();
-}
-$id_unit_usaha = $_POST['id_unit_usaha'];
-
-$i = 1;
+$tahun = date('Y');
+$j = 0;
+// if (!isset($_POST['id_unit_usaha'])) {
+//     echo "Halaman tidak ditemukan!!";
+//     die();
+// }
+// $id_unit_usaha = $_POST['id_unit_usaha'];
+$id_unit_usaha = 'UNI20200215081207771';
 
 $tahun = date('Y');
 $bulan = date('m');
 $hariBulanIni = cal_days_in_month(CAL_GREGORIAN, $bulan, $tahun);
 
-while ($i <= $hariBulanIni) {
+$query1 = mysql_query("SELECT * FROM data_jenis_bahan ORDER BY jenis_bahan ASC");
+$cek_kategori = mysql_num_rows($query1);
+if ($cek_kategori > 0) {
+    while ($row1 = mysql_fetch_array($query1)) {
+        $i = 1;
 
-    $tanggal = $tahun . '-' . $bulan . '-' . $i;
+        while ($i <= $hariBulanIni) {
+            $tanggal = $tahun . '-' . $bulan . '-' . $i;
 
-    $query1 = mysql_query("SELECT IFNULL(SUM(drp.bahan_herbisida),0) as bahan_herbisida_pemeliharaan
-                            FROM data_rencana_pemeliharaan drp
-                            LEFT JOIN data_pegawai dp ON drp.id_pegawai = dp.id_pegawai
-                            WHERE dp.id_unit_usaha = '$id_unit_usaha'
-                            AND date(drp.waktu) = '$tanggal'
-                            ");
-    $row1 = mysql_fetch_array($query1);
+            $query1_1 = mysql_query("SELECT IFNULL(SUM(jumlah_bahan), 0) as jumlah_bahan
+                                    FROM data_realisasi_pemeliharaan
+                                    WHERE id_jenis_bahan = '$row1[id_jenis_bahan]'
+                                    AND date(waktu) = '$tanggal'
+                                    AND status = 'disetujui'");
 
-    $rkap[] = array(
-        'x' => '' . $i . '',
-        'y' => $row1['bahan_herbisida_pemeliharaan'],
-    );
+            $row1_1 = mysql_fetch_array($query1_1);
 
-    $query2 = mysql_query("SELECT IFNULL(SUM(drp.bahan_herbisida),0) as bahan_herbisida_pemeliharaan
-                            FROM data_realisasi_pemeliharaan drp
-                            LEFT JOIN data_pegawai dp ON drp.id_pegawai = dp.id_pegawai
-                            WHERE dp.id_unit_usaha = '$id_unit_usaha'
-                            AND date(drp.waktu) = '$tanggal'
-                            ");
-    $row2 = mysql_fetch_array($query2);
+            $jumlah_bahan[$j][] = array(
+                'x' => '' . $i . '',
+                'y' => $row1_1['jumlah_bahan'],
+            );
 
-    $realisasi[] = array(
-        'x' => '' . $i . '',
-        'y' => $row2['bahan_herbisida_pemeliharaan'],
-    );
+            $i++;
+        }
+        $bahan[][$j] = array(
+            "jenis_bahan" => $row1['jenis_bahan'],
+            'data' => $jumlah_bahan[$j],
+        );
 
-    $i++;
+        $j++;
+    }
+} else {
+    $bahan = "Tidak ada data";
 }
 
-$data['rkap'] = $rkap;
-$data['realisasi'] = $realisasi;
+$data['bahan'] = $bahan;
 
 echo json_encode($data);

@@ -137,9 +137,24 @@ function loadPerbandinganProduksi() {
       console.log(data);
       d_perbandingan.updateSeries([
         {
-          name: "RKAP",
-          data: data["rkap"],
+          name: "REALISASI",
+          data: data["realisasi"],
         },
+      ]);
+    },
+  });
+}
+
+// ajax grafik perbandingan produksi
+function loadPerbandinganProduksiSd() {
+  $.ajax({
+    type: "POST",
+    url: "api/grafik_line_perbandingan_sd.php",
+    data: { id_unit_usaha: id_unit_usaha },
+    dataType: "JSON",
+    success: function (data) {
+      console.log(data);
+      d_perbandingan_sd.updateSeries([
         {
           name: "REALISASI",
           data: data["realisasi"],
@@ -233,6 +248,7 @@ function loadAllUnitUsaha() {
   loadAncak();
   loadTenagaPanen();
   loadPerbandinganProduksi();
+  loadPerbandinganProduksiSd();
 }
 
 var id_unit_usaha = document.getElementById("id_unit_usaha").value;

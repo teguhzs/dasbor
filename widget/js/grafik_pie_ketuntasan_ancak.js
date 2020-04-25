@@ -47,13 +47,19 @@ var optionsAncak = {
       opacity: 0.45,
     },
   },
-  series: [0, 0],
+  series: [],
   fill: {
     type: "gradient",
     opacity: 0.9,
   },
   noData: {
     text: "Loading...",
+    style: {
+      fontSize: "25px",
+      fontWeight: "bold",
+      fontFamily: undefined,
+      color: "#FFFFFF",
+    },
   },
 };
 

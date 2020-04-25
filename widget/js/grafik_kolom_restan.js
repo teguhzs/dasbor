@@ -2,7 +2,7 @@ var optionsgrafikRestan = {
   series: [],
   chart: {
     type: "bar",
-    height: 365,
+    height: 375,
     stacked: true,
     toolbar: {
       show: false,
@@ -66,9 +66,8 @@ var optionsgrafikRestan = {
   xaxis: {
     labels: {
       show: true,
-      align: "right",
       style: {
-        fontSize: "20px",
+        fontSize: "12px",
         fontFamily: "Helvetica, Arial, sans-serif",
       },
     },
@@ -98,6 +97,15 @@ var optionsgrafikRestan = {
       fontFamily: "Helvetica, Arial, sans-serif",
       fontWeight: "bold",
       colors: ["#ffffff"],
+    },
+  },
+  noData: {
+    text: "Loading...",
+    style: {
+      fontSize: "25px",
+      fontWeight: "bold",
+      fontFamily: undefined,
+      color: "#FFFFFF",
     },
   },
 };

@@ -15,17 +15,20 @@ var grafikTenagaPemeliharaan = {
       show: false,
     },
   },
-  colors: ["#0ac73c", "#c7170a"],
+  // colors: ["#0ac73c", "#c7170a"],
   // colors: ["#0fe300", "#fff800", "#0048e3", "#e300c9", "#00d8e3", "#8800e3"],
+  theme: {
+    palette: "palette1", // upto palette10
+  },
   dataLabels: {
     formatter: function (val) {
-      return val + "";
+      return val + " Org";
     },
     enabled: true,
-    distributed: false,
+    distributed: true,
     textAnchor: "start",
     style: {
-      fontSize: "10px",
+      fontSize: "15px",
       fontFamily: "Helvetica, Arial, sans-serif",
       fontWeight: "bold",
       // colors: undefined,
@@ -33,6 +36,16 @@ var grafikTenagaPemeliharaan = {
   },
   fill: {
     type: "gradient",
+    // opacity: 1,
+    gradient: {
+      shade: "dark",
+      type: "vertical",
+      shadeIntensity: 0.5,
+      inverseColors: false,
+      opacityFrom: 1,
+      opacityTo: 0.8,
+      stops: [0, 100],
+    },
   },
   stroke: {
     curve: "straight",
@@ -42,7 +55,7 @@ var grafikTenagaPemeliharaan = {
     text: "Jumlah Tenaga Pemeliharaan per Hari",
     floating: false,
     style: {
-      fontSize: '20px',
+      fontSize: "25px",
       color: "#fff",
     },
     align: "left",
@@ -51,20 +64,20 @@ var grafikTenagaPemeliharaan = {
     tickAmount: 5,
     labels: {
       show: true,
-      align: 'right',
+      align: "right",
       style: {
-        fontSize: '20px',
-        fontFamily: 'Helvetica, Arial, sans-serif',
+        fontSize: "20px",
+        fontFamily: "Helvetica, Arial, sans-serif",
       },
     },
   },
   xaxis: {
     labels: {
       show: true,
-      align: 'right',
+      align: "right",
       style: {
-        fontSize: '20px',
-        fontFamily: 'Helvetica, Arial, sans-serif',
+        fontSize: "20px",
+        fontFamily: "Helvetica, Arial, sans-serif",
       },
     },
   },
@@ -91,9 +104,22 @@ var grafikTenagaPemeliharaan = {
   legend: {
     position: "top",
     horizontalAlign: "right",
+    horizontalAlign: "right",
+    fontSize: "20px",
+    fontFamily: "Helvetica, Arial",
+    fontWeight: 800,
     floating: false,
     offsetY: 0,
     offsetX: 0,
+  },
+  noData: {
+    text: "Loading...",
+    style: {
+      fontSize: "25px",
+      fontWeight: "bold",
+      fontFamily: undefined,
+      color: "#FFFFFF",
+    },
   },
 };
 

@@ -15,6 +15,7 @@ $hariBulanIni = cal_days_in_month(CAL_GREGORIAN, $bulan, $tahun);
 
 $i = 1;
 
+$y = 0;
 while ($i <= $hariBulanIni) {
     $tanggal = $tahun . '-' . $bulan . '-' . $i;
     $query1 = mysql_query("SELECT IFNULL(SUM(produksi), 0) as produksi
@@ -23,11 +24,12 @@ while ($i <= $hariBulanIni) {
                             AND date(waktu) = '$tanggal'
                             AND status = 'disetujui'");
     $row1 = mysql_fetch_array($query1);
-    $y = $row1['produksi'] / 1000;
+
+    $y = $row1['produksi'] + $y;
     $tanggal = "01-" . $i . "-" . date('Y');
     $realisasi[] = array(
         'x' => '' . $i . '',
-        'y' => round($y, 2),
+        'y' => round($y / 1000, 2),
     );
 
     $i++;

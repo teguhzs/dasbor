@@ -8,6 +8,11 @@ if (!isset($_POST['id_unit_usaha'])) {
     die();
 }
 $id_unit_usaha = $_POST['id_unit_usaha'];
+// $id_unit_usaha = 'UNI20200215081207771';
+
+$tahun = date('Y');
+$bulan = date('m');
+$hariBulanIni = cal_days_in_month(CAL_GREGORIAN, $bulan, $tahun);
 
 $query1 = mysql_query("SELECT * FROM data_afdeling WHERE id_unit_usaha = '$id_unit_usaha' ORDER BY nama_afdeling ASC");
 $cekafdeling = mysql_num_rows($query1);
@@ -15,20 +20,21 @@ if ($cekafdeling > 0) {
     while ($row1 = mysql_fetch_array($query1)) {
         $i = 1;
 
-        while ($i < 13) {
+        while ($i <= $hariBulanIni) {
+            $tanggal = $tahun . '-' . $bulan . '-' . $i;
+
             $bulan = $i . $tahun;
-            $query1_1 = mysql_query("SELECT IFNULL(SUM(drp.curah_hujan),0) as curah_hujan
-                                    FROM data_realisasi_panen drp
-                                    LEFT JOIN data_pegawai dp ON dp.id_pegawai = drp.id_pegawai
-                                    WHERE dp.id_afdeling = '$row1[id_afdeling]'
-                                    AND DATE_FORMAT(drp.waktu, '%c%Y') = '$bulan'");
+            $query1_1 = mysql_query("SELECT IFNULL(SUM(curah_hujan),0) as curah_hujan
+                                    FROM data_realisasi_panen
+                                    WHERE id_afdeling = '$row1[id_afdeling]'
+                                    AND date(waktu) = '$tanggal'
+                                    AND status = 'disetujui'");
 
             $row1_1 = mysql_fetch_array($query1_1);
             $cek1_1 = mysql_num_rows($query1_1);
 
-            $tanggal = "01-" . $i . "-" . date('Y');
             $curah_hujan[$j][] = array(
-                'x' => date('M', strtotime($tanggal)),
+                'x' => '' . $i . '',
                 'y' => $row1_1['curah_hujan'],
             );
 

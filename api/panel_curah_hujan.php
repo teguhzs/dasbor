@@ -15,12 +15,12 @@ $tanggal_akhir = date('Y-m-t');
 $id_unit_usaha = $_POST['id_unit_usaha'];
 // $id_unit_usaha = 'UNI1912006';
 
-$query1 = mysql_query("SELECT SUM(drp.curah_hujan) as curah_hujan
-                        FROM data_realisasi_panen drp
-                        LEFT JOIN data_pegawai dp ON dp.id_pegawai = drp.id_pegawai
-                        WHERE dp.id_unit_usaha = '$id_unit_usaha'
-                        AND date(drp.waktu) >= '$tanggal_mulai'
-                        AND date(drp.waktu) <= '$tanggal_akhir'");
+$query1 = mysql_query("SELECT SUM(curah_hujan) as curah_hujan
+                        FROM data_realisasi_panen
+                        WHERE id_unit_usaha = '$id_unit_usaha'
+                        AND date(waktu) >= '$tanggal_mulai'
+                        AND date(waktu) <= '$tanggal_akhir'
+                        AND status = 'disetujui'");
 $cek1 = mysql_num_rows($query1);
 
 if ($cek1 > 0) {

@@ -9,63 +9,59 @@ if (!isset($_POST['id_unit_usaha'])) {
     die();
 }
 $id_unit_usaha = $_POST['id_unit_usaha'];
+// $id_unit_usaha = 'UNI20200215081207771';
 
-$query1 = mysql_query("SELECT * FROM data_afdeling WHERE id_unit_usaha = '$id_unit_usaha' ORDER BY nama_afdeling ASC");
-if (mysql_num_rows($query1) > 0) {
-    while ($row1 = mysql_fetch_array($query1)) {
-        $query1_1 = mysql_query("SELECT SUM(drp.kebutuhan_armada) as rkap
-                                    FROM data_rencana_panen drp
-                                    LEFT JOIN data_pegawai dp ON dp.id_pegawai = drp.id_pegawai
-                                    WHERE dp.id_afdeling = '$row1[id_afdeling]'
-                                    AND date(drp.waktu) >= '$tanggal_mulai'
-                                    AND date(drp.waktu) <= '$tanggal_akhir'
+$tahun = date('Y');
+$bulan = date('m');
+$hariBulanIni = cal_days_in_month(CAL_GREGORIAN, $bulan, $tahun);
+
+$i = 1;
+while ($i <= $hariBulanIni) {
+    $tanggal = $tahun . '-' . $bulan . '-' . $i;
+
+    $query1_1 = mysql_query("SELECT SUM(tenaga_panen) as tenaga_panen_rencana
+                                    FROM data_rencana_panen
+                                    WHERE id_unit_usaha = '$id_unit_usaha'
+                                    AND date(waktu) >= '$tanggal'
+                                    AND status = 'disetujui'
                                 ");
-        if (mysql_num_rows($query1_1) > 0) {
-            while ($row1_1 = mysql_fetch_array($query1_1)) {
-                $rkap[] = array(
-                    'x' => $row1['nama_afdeling'],
-                    'y' => round($row1_1['rkap']),
-                );
-            }
-        } else {
-            $rkap[] = array(
-                'x' => $row1['nama_afdeling'],
-                'y' => 0,
+    if (mysql_num_rows($query1_1) > 0) {
+        while ($row1_1 = mysql_fetch_array($query1_1)) {
+            $rencana[] = array(
+                'x' => '' . $i . '',
+                'y' => round($row1_1['tenaga_panen_rencana']),
             );
         }
-
-        $query1_2 = mysql_query("SELECT SUM(drp.tenaga_panen) as realisasi
-                                    FROM data_realisasi_panen drp
-                                    LEFT JOIN data_pegawai dp ON dp.id_pegawai = drp.id_pegawai
-                                    WHERE dp.id_afdeling = '$row1[id_afdeling]'");
-        if (mysql_num_rows($query1_2) > 0) {
-            while ($row1_2 = mysql_fetch_array($query1_2)) {
-                $realisasi[] = array(
-                    'x' => $row1['nama_afdeling'],
-                    'y' => $row1_2['realisasi'],
-                );
-            }
-        } else {
-            $realisasi[] = array(
-                'x' => $row1['nama_afdeling'],
-                'y' => 0,
-            );
-        }
+    } else {
+        $rencana[] = array(
+            'x' => '' . $i . '',
+            'y' => 0,
+        );
     }
 
-} else {
-    $rkap[] = array(
-        'x' => "",
-        'y' => 0,
-    );
-
-    $realisasi[] = array(
-        'x' => "",
-        'y' => 0,
-    );
+    $query1_2 = mysql_query("SELECT IFNULL(SUM(tenaga_panen), 0) as tenaga_panen_realisasi
+                                    FROM data_realisasi_panen
+                                    WHERE id_unit_usaha = '$id_unit_usaha'
+                                    AND date(waktu) = '$tanggal'
+                                    AND status = 'disetujui'
+                                    ");
+    if (mysql_num_rows($query1_2) > 0) {
+        while ($row1_2 = mysql_fetch_array($query1_2)) {
+            $realisasi[] = array(
+                'x' => '' . $i . '',
+                'y' => $row1_2['tenaga_panen_realisasi'],
+            );
+        }
+    } else {
+        $realisasi[] = array(
+            'x' => '' . $i . '',
+            'y' => 0,
+        );
+    }
+    $i++;
 }
 
-$data['rkap'] = $rkap;
+$data['rkap'] = $rencana;
 $data['realisasi'] = $realisasi;
 
 echo json_encode($data);

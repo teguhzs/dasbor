@@ -84,6 +84,15 @@ var grafikTbs = {
       colors: ["#1100ff"],
     },
   },
+  noData: {
+    text: "Loading...",
+    style: {
+      fontSize: "25px",
+      fontWeight: "bold",
+      fontFamily: undefined,
+      color: "#FFFFFF",
+    },
+  },
 };
 
 var d_tbs = new ApexCharts(
@@ -92,3 +101,22 @@ var d_tbs = new ApexCharts(
 );
 
 d_tbs.render();
+
+// ajax grafik TBS
+function loadTbs() {
+  $.ajax({
+    type: "POST",
+    url: "api/grafik_tbs.php",
+    data: { id_unit_usaha: id_unit_usaha },
+    dataType: "JSON",
+    success: function (data) {
+      console.log(data);
+      d_tbs.updateSeries([
+        {
+          name: "Realisasi",
+          data: data["realisasi"],
+        },
+      ]);
+    },
+  });
+}

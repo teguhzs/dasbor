@@ -1,7 +1,7 @@
-var grafikBahanHerbisida = {
+var grafikPerbandinganSd = {
   series: [],
   chart: {
-    height: 350,
+    height: 210,
     type: "line",
     dropShadow: {
       enabled: true,
@@ -15,24 +15,12 @@ var grafikBahanHerbisida = {
       show: false,
     },
   },
-  // colors: ["#0ac73c", "#c7170a"],
-  // colors: ["#0fe300", "#fff800", "#0048e3", "#e300c9", "#00d8e3", "#8800e3"],
-  theme: {
-    palette: "palette1", // upto palette10
-  },
+  colors: ["#fff800", "#0fe300", "#0048e3", "#e300c9", "#00d8e3", "#8800e3"],
   dataLabels: {
     formatter: function (val) {
-      return val + " L";
+      return val + " Ton";
     },
     enabled: true,
-    distributed: true,
-    textAnchor: "start",
-    style: {
-      fontSize: "15px",
-      fontFamily: "Helvetica, Arial, sans-serif",
-      fontWeight: "bold",
-      // colors: undefined,
-    },
   },
   fill: {
     type: "gradient",
@@ -51,17 +39,8 @@ var grafikBahanHerbisida = {
     curve: "straight",
     width: 2,
   },
-  title: {
-    text: "Capaian Penggunaan Bahan per Hari",
-    floating: false,
-    style: {
-      fontSize: "25px",
-      color: "#fff",
-    },
-    align: "left",
-  },
   yaxis: {
-    tickAmount: 5,
+    tickAmount: 3,
     labels: {
       show: true,
       align: "right",
@@ -81,6 +60,18 @@ var grafikBahanHerbisida = {
       },
     },
   },
+  title: {
+    text: "Capaian Produksi Sampai Dengan per Hari",
+    align: "left",
+    margin: 20,
+    floating: true,
+    style: {
+      fontSize: "20px",
+      fontWeight: "bold",
+      fontFamily: undefined,
+      color: "#fff",
+    },
+  },
   grid: {
     borderColor: "#404040",
     strokeDashArray: 6,
@@ -98,17 +89,11 @@ var grafikBahanHerbisida = {
   markers: {
     size: 1,
   },
-  // xaxis: {
-  //     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
-  // },
   legend: {
     position: "top",
     horizontalAlign: "right",
-    fontSize: "20px",
-    fontFamily: "Helvetica, Arial",
-    fontWeight: 800,
     floating: true,
-    offsetY: -20,
+    offsetY: 10,
     offsetX: 0,
   },
   noData: {
@@ -122,8 +107,8 @@ var grafikBahanHerbisida = {
   },
 };
 
-var d_bahanHerbisidaLine = new ApexCharts(
-  document.querySelector("#grafikBahanHerbisida"),
-  grafikBahanHerbisida
+var d_perbandingan_sd = new ApexCharts(
+  document.querySelector("#grafikPerbandinganSd"),
+  grafikPerbandinganSd
 );
-d_bahanHerbisidaLine.render();
+d_perbandingan_sd.render();

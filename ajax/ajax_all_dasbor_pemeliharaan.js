@@ -349,17 +349,17 @@ function loadLineTenagaPemeliharaan() {
     data: { id_unit_usaha: id_unit_usaha },
     dataType: "JSON",
     success: function (data) {
-      console.log(data);
-      d_tenagaPemeliharaanLine.updateSeries([
-        {
-          name: "Realisasi",
-          data: data["realisasi"],
-        },
-        {
-          name: "Rencana",
-          data: data["rkap"],
-        },
-      ]);
+      console.log(data["tenaga_pemeliharaan"].length);
+      var series = [];
+      for (let i = 0; i < data["tenaga_pemeliharaan"].length; i++) {
+        var seriesData = {
+          name: data["tenaga_pemeliharaan"][i][i]["kategori_pemeliharaan"],
+          type: "line",
+          data: data["tenaga_pemeliharaan"][i][i]["data"],
+        };
+        series.push(seriesData);
+      }
+      d_tenagaPemeliharaanLine.updateSeries(series);
     },
   });
 }
@@ -396,16 +396,16 @@ function loadLineBahanHerbisida() {
     dataType: "JSON",
     success: function (data) {
       console.log(data);
-      d_bahanHerbisidaLine.updateSeries([
-        {
-          name: "Realisasi",
-          data: data["realisasi"],
-        },
-        {
-          name: "Rencana",
-          data: data["rkap"],
-        },
-      ]);
+      var series = [];
+      for (let i = 0; i < data["bahan"].length; i++) {
+        var seriesData = {
+          name: data["bahan"][i][i]["jenis_bahan"],
+          type: "line",
+          data: data["bahan"][i][i]["data"],
+        };
+        series.push(seriesData);
+      }
+      d_bahanHerbisidaLine.updateSeries(series);
     },
   });
 }
@@ -419,16 +419,17 @@ function loadLuasPemeliharaan() {
     dataType: "JSON",
     success: function (data) {
       console.log(data);
-      d_luasPemeliharaanUnit.updateSeries([
-        {
-          name: "Realisasi",
-          data: data["realisasi"],
-        },
-        {
-          name: "Rencana",
-          data: data["rkap"],
-        },
-      ]);
+      var series = [];
+      for (let i = 0; i < data["luas"].length; i++) {
+        var seriesData = {
+          name: data["luas"][i][i]["kategori_pemeliharaan"],
+          type: "line",
+          data: data["luas"][i][i]["data"],
+        };
+        series.push(seriesData);
+      }
+      // console.log(series);
+      d_luasPemeliharaanUnit.updateSeries(series);
     },
   });
 }
@@ -529,21 +530,21 @@ function updateDasbor() {
 // Ajax all load
 function loadAllPemeliharaan() {
   // updateDasbor();
-  loadPanelBahanPupuk();
+  // loadPanelBahanPupuk();
   // loadPanelTenagaPemeliharaan();
-  loadPanelBahanHerbisida();
-  loadPanelLuas();
-  loadPerbandinganInspeksi();
-  loadPTT();
-  loadBMTD();
-  loadBMD();
-  loadBTT();
-  loadBarInspeksiPanen();
-  loadPiePemupukan();
-  loadPieTenagaPemeliharaan();
-  loadPieLuasPemeliharaan();
-  loadPieBahanHerbisida();
-  loadLinePemupukan();
+  // loadPanelBahanHerbisida();
+  // loadPanelLuas();
+  // loadPerbandinganInspeksi();
+  // loadPTT();
+  // loadBMTD();
+  // loadBMD();
+  // loadBTT();
+  // loadBarInspeksiPanen();
+  // loadPiePemupukan();
+  // loadPieTenagaPemeliharaan();
+  // loadPieLuasPemeliharaan();
+  // loadPieBahanHerbisida();
+  // loadLinePemupukan();
   loadLineTenagaPemeliharaan();
   loadLuasPemeliharaan();
   loadLineBahanHerbisida();

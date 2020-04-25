@@ -1,7 +1,7 @@
 var grafikPerbandingan = {
   series: [],
   chart: {
-    height: 350,
+    height: 210,
     type: "line",
     dropShadow: {
       enabled: true,
@@ -26,44 +26,51 @@ var grafikPerbandingan = {
     type: "gradient",
     // opacity: 1,
     gradient: {
-      shade: 'dark',
-      type: 'vertical',
+      shade: "dark",
+      type: "vertical",
       shadeIntensity: 0.5,
       inverseColors: false,
       opacityFrom: 1,
       opacityTo: 0.8,
-      stops: [0, 100]
-    }
-
+      stops: [0, 100],
+    },
   },
   stroke: {
     curve: "straight",
     width: 2,
   },
   yaxis: {
-    tickAmount: 5,
+    tickAmount: 3,
     labels: {
       show: true,
-      align: 'right',
+      align: "right",
       style: {
-        fontSize: '20px',
-        fontFamily: 'Helvetica, Arial, sans-serif',
+        fontSize: "20px",
+        fontFamily: "Helvetica, Arial, sans-serif",
       },
     },
   },
   xaxis: {
     labels: {
       show: true,
-      align: 'right',
+      align: "right",
       style: {
-        fontSize: '20px',
-        fontFamily: 'Helvetica, Arial, sans-serif',
+        fontSize: "20px",
+        fontFamily: "Helvetica, Arial, sans-serif",
       },
     },
   },
   title: {
-    text: " ",
+    text: "Capaian Produksi per Hari",
     align: "left",
+    margin: 20,
+    floating: true,
+    style: {
+      fontSize: "20px",
+      fontWeight: "bold",
+      fontFamily: undefined,
+      color: "#fff",
+    },
   },
   grid: {
     borderColor: "#404040",
@@ -82,15 +89,21 @@ var grafikPerbandingan = {
   markers: {
     size: 1,
   },
-  // xaxis: {
-  //     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
-  // },
   legend: {
     position: "top",
     horizontalAlign: "right",
-    floating: false,
-    offsetY: -25,
-    offsetX: -5,
+    floating: true,
+    offsetY: 10,
+    offsetX: 0,
+  },
+  noData: {
+    text: "Loading...",
+    style: {
+      fontSize: "25px",
+      fontWeight: "bold",
+      fontFamily: undefined,
+      color: "#FFFFFF",
+    },
   },
 };
 
