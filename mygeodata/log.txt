@@ -1,0 +1,2 @@
+Warning 1: Layer name 'Area Features' adjusted to 'Area_Features' for XML validity.
+Warning 1: Layer name 'Line Features' adjusted to 'Line_Features' for XML validity.

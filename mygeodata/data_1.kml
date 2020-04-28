@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<!-- created by GmapGIS.com -->
+<Document><name>MynameKML file polygon </name><description>Some description</description><Style id="polyStyID_0"><LineStyle><color>FF0000FF</color><width>5</width></LineStyle><PolyStyle><color>660088ff</color></PolyStyle> </Style><Placemark><name>Data 1</name><description><![CDATA[]]></description><styleUrl>#polyStyID_0</styleUrl><Polygon><tessellate>1</tessellate><altitudeMode>clampToGround</altitudeMode><outerBoundaryIs><LinearRing><coordinates>
+103.6136,-1.61364,0.0
+103.61333,-1.61471,0.0
+103.61444,-1.61574,0.0
+103.61674,-1.61511,0.0
+103.61568,-1.61363,0.0
+</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark></Document></kml>
