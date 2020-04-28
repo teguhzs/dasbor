@@ -34,42 +34,66 @@ function myMap() {
   map[3] = new google.maps.Map(document.getElementById("map2"), mapProp);
   map[4] = new google.maps.Map(document.getElementById("map3"), mapProp);
 
-  loadKmz(map[1]);
-  loadMarker(map[1]);
-  loadKmz(map[2]);
-  loadMarker(map[2]);
-  loadKmz(map[3]);
-  loadMarker(map[3]);
-  loadKmz(map[4]);
-  loadMarker(map[4]);
+  // loadKmz(map[1]);
+  // loadMarker(map[1]);
+  // loadKmz(map[2]);
+  // loadMarker(map[2]);
+  // loadKmz(map[3]);
+  // loadMarker(map[3]);
+  // loadKmz(map[4]);
+  // loadMarker(map[4]);
 }
 
 function reloadMap1() {
   var select = document.getElementById("sel-unit-usaha-1");
   var id_unit_usaha = select.options[select.selectedIndex].value;
   loadKmz(map[1], id_unit_usaha);
-  loadMarker(map[1]);
+  loadMarker(map[1], 1);
+
+  setInterval(() => {
+    console.log(markers);
+    deleteMarkers(1);
+    loadMarker(map[1], 1);
+  }, 10000);
 }
 
 function reloadMap2() {
   var select = document.getElementById("sel-unit-usaha-2");
   var id_unit_usaha = select.options[select.selectedIndex].value;
   loadKmz(map[2], id_unit_usaha);
-  loadMarker(map[2]);
+  loadMarker(map[2], 2);
+
+  setInterval(() => {
+    console.log(markers);
+    deleteMarkers(2);
+    loadMarker(map[2], 2);
+  }, 10000);
 }
 
 function reloadMap3() {
   var select = document.getElementById("sel-unit-usaha-3");
   var id_unit_usaha = select.options[select.selectedIndex].value;
   loadKmz(map[3], id_unit_usaha);
-  loadMarker(map[4]);
+  loadMarker(map[3], 3);
+
+  setInterval(() => {
+    console.log(markers);
+    deleteMarkers(3);
+    loadMarker(map[3], 3);
+  }, 10000);
 }
 
 function reloadMap4() {
   var select = document.getElementById("sel-unit-usaha-4");
   var id_unit_usaha = select.options[select.selectedIndex].value;
   loadKmz(map[4], id_unit_usaha);
-  loadMarker(map[4]);
+  loadMarker(map[4], 4);
+
+  setInterval(() => {
+    console.log(markers);
+    deleteMarkers(4);
+    loadMarker(map[4], 4);
+  }, 5000);
 }
 
 function loadKmz(map, id_unit_usaha) {
@@ -88,11 +112,11 @@ function loadKmz(map, id_unit_usaha) {
   });
 }
 
-function loadMarker(map) {
+function loadMarker(map, no) {
   // body...
   var currentInfoWindow = null;
 
-  var markers = [];
+  markers[no] = [];
 
   $.ajax({
     url: "ajax_realtime.php",
@@ -139,7 +163,7 @@ function loadMarker(map) {
         var marker = new google.maps.Marker({
           position: point,
           map: map,
-          animation: google.maps.Animation.DROP,
+          // animation: google.maps.Animation.DROP,
           label: {
             text: proses[i]["nama"],
             // text: resultText,
@@ -152,9 +176,10 @@ function loadMarker(map) {
           icon: icon,
           title: proses[i]["nama"],
         });
-        markers.push(marker);
+        markers[no].push(marker);
         // marker.setPosition(point);
-        //marker.setMap(map);
+        // markers.setMap(map);
+        setMapOnAll(map, no);
 
         google.maps.event.addListener(
           marker,
@@ -174,13 +199,23 @@ function loadMarker(map) {
       }
     },
   });
-  // Path for cluster icons to be appended (1.png, 2.png, etc.)
-  // const imagePath = "markerclusterer/images/m";
-
-  // Enable marker clustering for this map and these markers
-  //   const markerClusterer = new MarkerClusterer(map, markers, {
-  //     imagePath: imagePath,
-  //     gridSize: 30,
-  //     maxZoom: 18,
-  //   });
 }
+
+// Sets the map on all markers in the array.
+function setMapOnAll(map, no) {
+  for (var i = 0; i < markers[no].length; i++) {
+    markers[no][i].setMap(map);
+  }
+}
+
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers(no) {
+  setMapOnAll(null, no);
+}
+
+function deleteMarkers(no) {
+  clearMarkers(no);
+  markers[no] = [];
+}
+
+var markers = [];
