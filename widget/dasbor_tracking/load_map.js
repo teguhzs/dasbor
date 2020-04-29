@@ -51,7 +51,7 @@ function reloadMap1() {
   loadMarker(map[1], 1);
 
   setInterval(() => {
-    console.log(markers);
+    // console.log(markers);
     deleteMarkers(1);
     loadMarker(map[1], 1);
   }, 10000);
@@ -64,7 +64,7 @@ function reloadMap2() {
   loadMarker(map[2], 2);
 
   setInterval(() => {
-    console.log(markers);
+    // console.log(markers);
     deleteMarkers(2);
     loadMarker(map[2], 2);
   }, 10000);
@@ -77,7 +77,7 @@ function reloadMap3() {
   loadMarker(map[3], 3);
 
   setInterval(() => {
-    console.log(markers);
+    // console.log(markers);
     deleteMarkers(3);
     loadMarker(map[3], 3);
   }, 10000);
@@ -90,7 +90,7 @@ function reloadMap4() {
   loadMarker(map[4], 4);
 
   setInterval(() => {
-    console.log(markers);
+    // console.log(markers);
     deleteMarkers(4);
     loadMarker(map[4], 4);
   }, 5000);

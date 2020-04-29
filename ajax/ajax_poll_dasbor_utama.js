@@ -1,3 +1,3 @@
 window.setInterval(function () {
   loadAllDasborUtama();
-}, 3000);
+}, 30000);

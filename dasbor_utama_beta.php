@@ -217,11 +217,8 @@
                     </div>
                     <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1">
                         <div class="row widget-statistic mr-1">
-                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
+                            <div class="col-xl-12 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
                                 <?php include "widget/dasbor_keseluruhan/grafik_donut_komoditi.php";?>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing">
-                                <?php include "widget/dasbor_keseluruhan/grafik_bar_inspeksi_panen_all.php";?>
                             </div>
                             <div class="col-xl-12 col-lg-6 col-md-4 col-sm-4 col-12 layout-spacing mt-1">
                                 <?php include "widget/dasbor_keseluruhan/grafik_kolom_produksi_unit_usaha.php";?>
@@ -298,7 +295,7 @@
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <script src="ajax/ajax_all_dasbor_utama.js"></script>
-  <script src="ajax/ajax_poll_dasbor_utama.js"></script>
+    <script src="ajax/ajax_poll_dasbor_utama.js"></script>
 
 </body>
 
